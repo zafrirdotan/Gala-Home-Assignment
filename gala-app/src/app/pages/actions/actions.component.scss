@@ -1,0 +1,28 @@
+.user-card-container {
+  width: 100%;
+  .saved-popup {
+    color: #3f51b5;
+    font-size: 30px;
+    padding: 25px;
+    position: absolute;
+    top: 50px;
+    left: 70px;
+  }
+  .header {
+    color: #3f51b5;
+  }
+  .user-card {
+    margin: 50px auto;
+    padding: 50px;
+    width: 400px;
+    .user-form {
+      // width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .submit-button {
+      height: 45px;
+      width: 10px auto;
+    }
+  }
+}

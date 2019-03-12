@@ -1,0 +1,53 @@
+<div class="user-card-container">
+  <div class="saved-popup" *ngIf="showSavedText">New User Saved...</div>
+  <div class="user-card">
+    <h1 class="header">Enter a new user</h1>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-form">
+      <mat-form-field>
+        <input matInput placeholder="User Name" formControlName="name" />
+      </mat-form-field>
+      <div
+        *ngIf="
+          userForm.controls.name.invalid &&
+          (userForm.controls.name.dirty || userForm.controls.name.touched)
+        "
+      >
+        *Name must be entered!!
+      </div>
+      <mat-label>Value</mat-label>
+      <mat-slider
+        min="0"
+        max="100"
+        step="1"
+        [thumbLabel]="true"
+        formControlName="value"
+      ></mat-slider>
+      <div
+        *ngIf="
+          userForm.controls.value.invalid &&
+          (userForm.controls.value.dirty || userForm.controls.value.touched)
+        "
+      >
+        *Value must be set!!
+      </div>
+      <mat-form-field>
+        <textarea
+          matInput
+          placeholder="Textarea"
+          formControlName="message"
+        ></textarea>
+      </mat-form-field>
+      <div
+        *ngIf="
+          userForm.controls.message.invalid &&
+          (userForm.controls.message.dirty || userForm.controls.message.touched)
+        "
+      >
+        *Message must be set!!
+      </div>
+      <button class="submit-button"mat-raised-button color="primary" type="submit">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
