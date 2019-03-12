@@ -34,6 +34,8 @@ export class AppService {
   private getUsersFromServer(): void {
     this.http.get<User[]>(URL, { responseType: 'json' }).subscribe(users => {
       this.updateLocalStorage(users);
+      console.log(users);
+      
     });
   }
 

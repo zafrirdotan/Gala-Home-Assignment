@@ -41,6 +41,8 @@ export class ActionsComponent {
   }
 
   ngOnDestroy() {
-    this.creatUserSub.unsubscribe();
+    if (this.creatUserSub) {
+      this.creatUserSub.unsubscribe();
+    }
   }
 }

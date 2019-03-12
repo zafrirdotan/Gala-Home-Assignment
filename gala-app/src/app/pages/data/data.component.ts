@@ -21,6 +21,8 @@ export class DataComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.getUserSub.unsubscribe();
+    if (this.getUserSub) {
+      this.getUserSub.unsubscribe();
+    }
   }
 }
